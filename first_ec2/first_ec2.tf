@@ -1,13 +1,15 @@
 provider "aws" {
-  access_key = "" 
+  access_key = ""
   secret_key = ""
-  region     = "ap-south-1"
+  region     = "us-east-1"
 }
 
 resource "aws_instance" "myec2" {
-  subnet_id = "subnet-0466965d86d3e56d4"
-  ami           = "ami-057752b3f1d6c4d6c"
+  ami           = "ami-051f7e7f6c2f40dc1"
   instance_type = "t2.micro"
+  tags = {
+       "name" = "nameTF"
+     }
 }
 
 output "ec2_address" {
